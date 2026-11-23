@@ -1,0 +1,10 @@
+tasks = ["done", "pending", "done", "pending", "done", "pending"]
+
+# 1. Replace every second task starting from index 1 with "completed"
+tasks[1::2] = ["completed"] * len(tasks[1::2])
+
+# 2. Insert "audit" immediately after the third element (index 3) without overwriting
+tasks[3:3] = ["audit"]
+
+print(tasks)
+# Output: ['done', 'completed', 'done', 'audit', 'completed', 'done', 'completed']
