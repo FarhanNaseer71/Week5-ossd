@@ -1,0 +1,13 @@
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# 1. Primary diagonal elements
+diagonal = [matrix[i][i] for i in range(len(matrix))]
+
+# 2. Flattened 1D list of even numbers
+evens = [num for row in matrix for num in row if num % 2 == 0]
+
+print(f"Diagonal: {diagonal}")
+print(f"Evens: {evens}")
+# Output:
+# Diagonal: [1, 5, 9]
+# Evens: [2, 4, 6, 8]
