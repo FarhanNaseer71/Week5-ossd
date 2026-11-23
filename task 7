@@ -1,0 +1,23 @@
+players = [
+    ("Aria", 88, True),
+    ("Kael", 95, False),
+    ("Zane", 91, True),
+    ("Mira", 76, True),
+    ("Lyra", 99, True),
+    ("Dax", 84, True)
+]
+
+# Filter active players, sort by score descending, take top 3, and format
+active_sorted = sorted(
+    [p for p in players if p[2]],
+    key=lambda x: x[1],
+    reverse=True
+)[:3]
+
+leaderboard = [
+    f"Rank {rank}: {name} ({score})"
+    for rank, (name, score, _) in enumerate(active_sorted, start=1)
+]
+
+print(leaderboard)
+# Output: ['Rank 1: Lyra (99)', 'Rank 2: Zane (91)', 'Rank 3: Aria (88)']
